@@ -2,33 +2,16 @@
 import { useState, useEffect } from 'react';
 
 import data from '../../data/data';
-import { getGithubData } from '../../data/github';
 // import useAnalyticsEventTracker from '../../hooks/useAnalyticsEventTracker';
 
 function AboutSection() {
-	const [githubData, setGithubData] = useState({});
-	const [isLoading, setIsLoading] = useState(true);
-	const [yearsOfExperience, setYearsOfExperience] = useState(0);
+	const [isLoading] = useState(true);
 	// const gaEventTracker = useAnalyticsEventTracker();
 
 	const { PUBLIC_URL } = process.env;
-	const { about, contactEmail, startDate } = data;
+	const { about, contactEmail } = data;
 
 	const currentDomain = window.location.hostname;
-
-	useEffect(() => {
-		getGithubData().then((res) => {
-			setGithubData(res);
-			setIsLoading(false);
-
-			let years = new Date().getFullYear() - startDate - 0.5;
-			if (new Date().getMonth() > 6) {
-				years += 0.5;
-			}
-
-			setYearsOfExperience(years);
-		});
-	}, []);
 
 	useEffect(() => {
 		if (!isLoading) {
@@ -132,57 +115,6 @@ function AboutSection() {
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div className="spacer" data-height={70} />
-			<div className="row">
-				<div className="col-md-3 col-sm-6">
-					<div className="fact-item">
-						<span className="icon icon-badge" />
-						<div className="details">
-							<h3 className="mb-0 mt-0 number">
-								<em className="count">{yearsOfExperience}</em>
-							</h3>
-							<p className="mb-0">Years’ Experience</p>
-						</div>
-					</div>
-					<div className="spacer d-md-none d-lg-none" data-height={30} />
-				</div>
-				<div className="col-md-3 col-sm-6">
-					<div className="fact-item">
-						<span className="icon icon-fire" />
-						<div className="details">
-							<h3 className="mb-0 mt-0 number">
-								<em className="count">{githubData.numberOfRepos}</em>
-							</h3>
-							<p className="mb-0">Github Repositories</p>
-						</div>
-					</div>
-					<div className="spacer d-md-none d-lg-none" data-height={30} />
-				</div>
-				<div className="col-md-3 col-sm-6">
-					<div className="fact-item">
-						<span className="icon icon-chart" />
-						<div className="details">
-							<h3 className="mb-0 mt-0 number">
-								<em className="count">{githubData.totalCommits}</em>
-							</h3>
-							<p className="mb-0">Github Commits</p>
-						</div>
-					</div>
-					<div className="spacer d-md-none d-lg-none" data-height={30} />
-				</div>
-				<div className="col-md-3 col-sm-6">
-					<div className="fact-item">
-						<span className="icon icon-star" />
-						<div className="details">
-							<h3 className="mb-0 mt-0 number">
-								<em className="count">{githubData.totalStars}</em>
-							</h3>
-							<p className="mb-0">Github Star</p>
-						</div>
-					</div>
-					<div className="spacer d-md-none d-lg-none" data-height={30} />
 				</div>
 			</div>
 		</div>

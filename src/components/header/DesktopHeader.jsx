@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { getLatestCommitDate } from '../../data/github';
-
 function DesktopHeader() {
 	const [lastUpdated, setLastUpdated] = useState('');
 
 	useEffect(() => {
-		getLatestCommitDate().then((date) => {
-			// Format: Month Year
-			setLastUpdated(`${date.toLocaleString('en-us', { month: 'long' })} ${date.getFullYear()}`);
-		});
+		const currentDate = new Date();
+		// Format: Month Year
+		setLastUpdated(`${currentDate.toLocaleString('en-us', { month: 'long' })} ${currentDate.getFullYear()}`);
 	}, []);
 
 	return (
