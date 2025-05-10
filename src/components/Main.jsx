@@ -1,16 +1,10 @@
 import { useEffect } from 'react';
 
-import data from '../data/data';
-
 import Section from './Section';
 import HomeSection from './home/HomeSection';
 import AboutSection from './about/AboutSection';
 import ResumeSection from './resume/ResumeSection';
-// import WorkSection from './work/WorkSection';
-import CertificationSection from './certification/CertificationSection';
-import AchieveSection from './achieve/AchieveSection';
 import ContactSection from './contact/ContactSection';
-import ProjectList from './resume/ProjectList';
 
 function Main() {
 	useEffect(() => {
@@ -20,9 +14,6 @@ function Main() {
 			speed: 200,
 			slidesToShow: 3,
 			slidesToScroll: 3,
-			// infinite: true,
-			// autoplay: true,
-			// autoplaySpeed: 3000,
 			swipeToSlide: false,
 			swipe: false,
 			responsive: [
@@ -49,8 +40,6 @@ function Main() {
 		});
 	}, []);
 
-	const { projects } = data;
-
 	return (
 		<main className="content">
 			<HomeSection />
@@ -65,32 +54,6 @@ function Main() {
 				title="Resume"
 			>
 				<ResumeSection />
-			</Section>
-
-			{/* <Section
-				id="works"
-				title="Works"
-			>
-				<WorkSection />
-			</Section> */}
-			<Section
-				id="projects"
-				title="Projects"
-			>
-				<ProjectList projects={projects} />
-			</Section>
-			<Section
-				id="certifications"
-				title="Certifications"
-			>
-				<CertificationSection />
-			</Section>
-
-			<Section
-				id="achieves"
-				title="Achievements"
-			>
-				<AchieveSection />
 			</Section>
 			<Section
 				id="contact"

@@ -3,9 +3,7 @@ import parse from 'html-react-parser';
 
 import TimelineConatiner from './TimelineConatiner';
 import data from '../../data/data';
-import MoocCertificate from './MoocCertificate';
 
-// New component for the Others section
 function OthersSection({ others }) {
 	return (
 		<div>
@@ -77,8 +75,6 @@ function ResumeSection() {
 						icon="activity"
 					/>
 
-					<MoocCertificate />
-
 					<OthersSection others={others} />
 				</div>
 			</div>
@@ -109,7 +105,6 @@ function ResumeSection() {
 					timelineData={experience}
 					icon="exp"
 				/>
-				<MoocCertificate />
 			</div>
 		</div>
 	);

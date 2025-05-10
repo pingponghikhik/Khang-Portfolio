@@ -39,24 +39,6 @@ function DesktopHeader() {
 						</a>
 					</li>
 					<li>
-						<a href="#projects">
-							<i className="icon-folder" />
-							Projects
-						</a>
-					</li>
-					<li>
-						<a href="#certifications">
-							<i className="icon-check" />
-							Certifications
-						</a>
-					</li>
-					<li>
-						<a href="#achieves">
-							<i className="icon-note" />
-							Achieves
-						</a>
-					</li>
-					<li>
 						<a href="#contact">
 							<i className="icon-bubbles" />
 							Contact

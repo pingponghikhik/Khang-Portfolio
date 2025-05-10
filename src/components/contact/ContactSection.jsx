@@ -1,44 +1,17 @@
 /* eslint-disable no-undef */
-import React, { useRef, useState } from 'react';
-import Turnstile, { useTurnstile } from 'react-turnstile';
+import { useRef, useState } from 'react';
 import data from '../../data/data';
 
-const TURNSTILE_SITE_KEY = process.env.REACT_APP_TURNSTILE_SITE_KEY;
 const EMAIL_API_ENDPOINT = process.env.REACT_APP_EMAIL_API_ENDPOINT;
 
 function ContactSection() {
 	const form = useRef();
-	const turnstile = useTurnstile();
-	const turnstileRef = useRef(null); // Add ref for Turnstile
 	const { contactEmail } = data;
-	const [turnstileToken, setTurnstileToken] = useState(null);
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const sendEmail = async (e) => {
 		e.preventDefault();
-
-		// Ensure the Turnstile verification is complete before submitting
-		if (!turnstileToken) {
-			Swal.fire({
-				icon: 'error',
-				title: 'Verification required',
-				text: 'Please complete the security verification first.',
-			});
-			return;
-		}
-
 		setIsSubmitting(true);
-
-		// Show loading modal
-		Swal.fire({
-			// title: 'Sending message...',
-			allowOutsideClick: false,
-			allowEscapeKey: false,
-			allowEnterKey: false,
-			didOpen: () => {
-				Swal.showLoading();
-			},
-		});
 
 		// Create FormData from form
 		const formData = new FormData(form.current);
@@ -58,7 +31,6 @@ function ContactSection() {
 		// }
 
 		// Add turnstile token to FormData
-		formData.append('cf-turnstile-response', turnstileToken);
 
 		try {
 			// Replace with your actual Cloudflare Worker URL
@@ -92,12 +64,6 @@ function ContactSection() {
 				text: error.message || 'Failed to send your message. Please try again.',
 			});
 		} finally {
-			// Always reset Turnstile regardless of success or failure
-			setTurnstileToken(null);
-			if (turnstileRef.current) {
-				turnstileRef.current.reset();
-			}
-			turnstile.reset();
 			setIsSubmitting(false);
 		}
 	};
@@ -167,19 +133,6 @@ function ContactSection() {
 								<div className="help-block with-errors" />
 							</div>
 						</div>
-
-						{/* Cloudflare Turnstile */}
-						<div className="column col-md-12">
-							<div className="form-group turnstile-container">
-								<Turnstile
-									ref={turnstileRef}
-									sitekey={TURNSTILE_SITE_KEY}
-									onVerify={(token) => setTurnstileToken(token)}
-									onExpire={() => setTurnstileToken(null)}
-									theme="light"
-								/>
-							</div>
-						</div>
 					</div>
 					<button
 						type="submit"
@@ -187,7 +140,6 @@ function ContactSection() {
 						id="submit"
 						value="Submit"
 						className="btn btn-default"
-						disabled={isSubmitting || !turnstileToken}
 					>
 						{isSubmitting ? 'Sending...' : 'Send Message'}
 					</button>
