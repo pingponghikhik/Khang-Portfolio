@@ -12,10 +12,10 @@ function HomeSection() {
 				<div className="intro">
 					<img
 						src={`${PUBLIC_URL}/images/dan3002/avatar.png`}
-						alt="Nguyễn Đình Anh Avatar"
+						alt="Dương Tuấn Khang Avatar"
 						className="mb-4"
 					/>
-					<h1 className="mb-2 mt-0">Nguyễn Đình Anh</h1>
+					<h1 className="mb-2 mt-0">Dương Tuấn Khang</h1>
 					<span>
 						<span>I'm </span>
 						<span className="text-rotating">
@@ -23,11 +23,6 @@ function HomeSection() {
 						</span>
 					</span>
 					<ul className="social-icons light list-inline mb-0 mt-4">
-						<li className="list-inline-item">
-							<a href="https://github.com/DAN3002" target="_blank" rel="noreferrer">
-								<i className="fab fa-github" />
-							</a>
-						</li>
 						<li className="list-inline-item">
 							<a
 								href="https://www.facebook.com/dan3002/"

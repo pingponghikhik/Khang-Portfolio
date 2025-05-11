@@ -2,7 +2,7 @@
 import { useRef, useState } from 'react';
 import data from '../../data/data';
 
-const EMAIL_API_ENDPOINT = process.env.REACT_APP_EMAIL_API_ENDPOINT;
+const EMAIL_API_ENDPOINT = 'dtuankhang02@gmail.com';
 
 function ContactSection() {
 	const form = useRef();

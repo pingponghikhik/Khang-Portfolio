@@ -14,7 +14,7 @@ function DesktopHeader() {
 			{/* logo image */}
 			<div className="site-logo">
 				<a href="index.html">
-					<h2>D.A.N_3002</h2>
+					<h2>T_K_D</h2>
 				</a>
 			</div>
 			{/* main menu */}
@@ -54,7 +54,7 @@ function DesktopHeader() {
 					{' '}
 					{new Date().getFullYear()}
 					{' '}
-					<b>Nguyễn Đình Anh</b>
+					<b>Dương Tuấn Khang</b>
 					.
 				</span>
 				<br />

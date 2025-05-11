@@ -11,7 +11,7 @@ function MobileHeader() {
 				{/* logo image */}
 				<div className="site-logo">
 					<a href="index.html">
-						<h2>D.A.N_3002</h2>
+						<h2>T_K_D</h2>
 					</a>
 				</div>
 			</div>

@@ -9,7 +9,7 @@ function AboutSection() {
 	// const gaEventTracker = useAnalyticsEventTracker();
 
 	const { PUBLIC_URL } = process.env;
-	const { about, contactEmail } = data;
+	const { about, contactEmail, phone } = data;
 
 	const currentDomain = window.location.hostname;
 
@@ -29,7 +29,7 @@ function AboutSection() {
 					<div className="text-center text-md-left">
 						<img
 							src={`${PUBLIC_URL}/images/dan3002/profile.png`}
-							alt="Nguyễn Đình Anh Profile"
+							alt="Dương Tuấn Khang Profile"
 						/>
 					</div>
 					<div className="spacer d-md-none d-lg-none" data-height={30} />
@@ -41,7 +41,7 @@ function AboutSection() {
 								<p>
 									I'm
 									{' '}
-									<b>Nguyễn Đình Anh,</b>
+									<b>Dương Tuấn Khang,</b>
 								</p>
 								{about.paragraphs.map((item) => (
 									<p>{item}</p>
@@ -80,7 +80,7 @@ function AboutSection() {
 									<li className="col-md-6">
 										<i className="fas fa-angle-right" />
 										<b>Phone: </b>
-										<span>(+84) 914085246</span>
+										<span>{phone}</span>
 									</li>
 									<li className="col-md-6">
 										<i className="fas fa-angle-right" />
@@ -96,7 +96,7 @@ function AboutSection() {
 
 								<div className="mt-3">
 									<a
-										href={`${PUBLIC_URL}/Resume_Nguyễn Đình Anh.pdf`}
+										href={`${PUBLIC_URL}/Resume_Dương Tuấn Khang.pdf`}
 										className="btn btn-default"
 										target="_blank"
 										rel="noreferrer"

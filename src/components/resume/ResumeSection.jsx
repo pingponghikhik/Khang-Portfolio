@@ -31,7 +31,7 @@ function OthersSection({ others }) {
 
 function ResumeSection() {
 	const {
-		education, experience, activities, others,
+		education, experience, others,
 	} = data;
 
 	const [isMobile, setIsMobile] = useState(false);
@@ -69,12 +69,6 @@ function ResumeSection() {
 						icon="exp"
 					/>
 
-					<TimelineConatiner
-						title="Activities"
-						timelineData={activities}
-						icon="activity"
-					/>
-
 					<OthersSection others={others} />
 				</div>
 			</div>
@@ -89,12 +83,6 @@ function ResumeSection() {
 					title="Education"
 					timelineData={education}
 					icon="edu"
-				/>
-
-				<TimelineConatiner
-					title="Activities"
-					timelineData={activities}
-					icon="activity"
 				/>
 
 				<OthersSection others={others} />
