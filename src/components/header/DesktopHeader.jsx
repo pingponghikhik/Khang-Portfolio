@@ -14,7 +14,7 @@ function DesktopHeader() {
 			{/* logo image */}
 			<div className="site-logo">
 				<a href="index.html">
-					<h2>T_K_D</h2>
+					<h2>DTK</h2>
 				</a>
 			</div>
 			{/* main menu */}

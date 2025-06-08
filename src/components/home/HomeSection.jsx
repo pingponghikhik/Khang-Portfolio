@@ -11,9 +11,10 @@ function HomeSection() {
 			<div className="container">
 				<div className="intro">
 					<img
-						src={`${PUBLIC_URL}/images/dan3002/avatar.png`}
+						src={`${PUBLIC_URL}/images/duongtuankhang/avatar.png`}
 						alt="Dương Tuấn Khang Avatar"
 						className="mb-4"
+						style={{ width: '108px', height: '108px' }}
 					/>
 					<h1 className="mb-2 mt-0">Dương Tuấn Khang</h1>
 					<span>
@@ -23,7 +24,7 @@ function HomeSection() {
 						</span>
 					</span>
 					<ul className="social-icons light list-inline mb-0 mt-4">
-						<li className="list-inline-item">
+						{/* <li className="list-inline-item">
 							<a
 								href="https://www.facebook.com/dan3002/"
 								target="_blank"
@@ -31,10 +32,10 @@ function HomeSection() {
 							>
 								<i className="fab fa-facebook" />
 							</a>
-						</li>
+						</li> */}
 						<li className="list-inline-item">
 							<a
-								href="https://www.linkedin.com/in/dan3002/"
+								href="https://www.linkedin.com/in/duong-khang-307588354/"
 								target="_blank"
 								rel="noreferrer"
 							>

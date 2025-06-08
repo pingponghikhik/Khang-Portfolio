@@ -15,7 +15,8 @@ export default {
 	},
 	others: [
 		'<b>Languages</b>: English | Vietnamese: native.',
-		'<b>Programming languages</b>: Python, JavaScript, Java, SQL.',
+		'<b>Programming languages</b>: Python, JavaScript, Java, TypeScript.',
+		'<b>Databases</b>: MySQL, PostgreSQL, Microsoft SQL Server.',
 		'<b>Frameworks & Libraries</b>: VueJS, Spring Boot, FastAPI, Nuxt',
 		'<b>Other</b>: Linux, Git, Docker',
 	],

@@ -28,7 +28,7 @@ function AboutSection() {
 				<div className="col-md-3">
 					<div className="text-center text-md-left">
 						<img
-							src={`${PUBLIC_URL}/images/dan3002/profile.png`}
+							src={`${PUBLIC_URL}/images/duongtuankhang/profile.png`}
 							alt="Dương Tuấn Khang Profile"
 						/>
 					</div>
@@ -96,7 +96,7 @@ function AboutSection() {
 
 								<div className="mt-3">
 									<a
-										href={`${PUBLIC_URL}/Resume_Dương Tuấn Khang.pdf`}
+										href={`${PUBLIC_URL}/Resume_Duong Tuan Khang.pdf`}
 										className="btn btn-default"
 										target="_blank"
 										rel="noreferrer"
